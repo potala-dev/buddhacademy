@@ -1,4 +1,4 @@
-iname: Build & Deploy
+name: Build & Deploy
 on:
   push:
     branches:
