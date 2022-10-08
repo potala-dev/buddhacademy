@@ -12,10 +12,10 @@
 
     <q-footer>
       <q-tabs>
-        <q-route-tab label="Home" icon="home" />
-        <q-route-tab label="Courses" icon="school" />
-        <q-route-tab label="Explore" icon="apps" />
-        <q-route-tab label="Settings" icon="settings" />
+        <q-route-tab to="/" label="Home" icon="home" />
+        <q-route-tab to="/courses" label="Courses" icon="school" />
+        <q-route-tab to="/explore" label="Explore" icon="apps" />
+        <q-route-tab to="/settings" label="Settings" icon="settings" />
       </q-tabs>
     </q-footer>
   </q-layout>
