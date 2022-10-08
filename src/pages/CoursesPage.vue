@@ -21,7 +21,7 @@
         </q-tab-panel>
         <q-tab-panel name="watchlist">
           <div class="q-gutter-md">
-            <q-card v-for="course in startedCourses" :key="course.id">
+            <q-card v-for="course in watchlistCourses" :key="course.id">
               <q-video :src="course.src" />
               <q-card-section>
                 <div class="text-h6">{{ course.title }}</div>
@@ -34,36 +34,24 @@
   </q-page>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
-export default defineComponent({
-  name: 'CoursesPage',
+<script lang="ts" setup>
+import { ref } from 'vue';
+const tab = ref('started');
 
-  setup() {
-    const tab = ref('started');
+const genrateDummyCourse = (n: number) => {
+  const courses = [];
+  const course = {
+    id: n,
+    title: `Meditation & Mindfulness | Day ${n}`,
+    src: 'https://www.youtube.com/embed/EzntoqdlK7Q',
+  };
+  for (let i = 0; i < n; i++) {
+    courses.push(course);
+  }
+  return courses;
+};
 
-    const genrateDummyCourse = (n: number) => {
-      const courses = [];
-      const course = {
-        id: n,
-        title: `Meditation & Mindfulness | Day ${n}`,
-        src: 'https://www.youtube.com/embed/EzntoqdlK7Q',
-      };
-      for (let i = 0; i < n; i++) {
-        courses.push(course);
-      }
-      return courses;
-    };
+const startedCourses = genrateDummyCourse(10);
 
-    const startedCourses = genrateDummyCourse(10);
-
-    const watchlistCourses = genrateDummyCourse(20);
-
-    return {
-      tab,
-      startedCourses,
-      watchlistCourses,
-    };
-  },
-});
+const watchlistCourses = genrateDummyCourse(20);
 </script>

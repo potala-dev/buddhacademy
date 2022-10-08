@@ -38,21 +38,23 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-const tab = ref('recommneded');
+const tab = ref('recommended');
 const search = ref('');
 
 const genrateDummyCourse = (n: number) => {
   const courses = [];
   const course = {
-    id: n,
+    id: 0,
     title: `Meditation & Mindfulness | Day ${n}`,
     src: 'https://www.youtube.com/embed/EzntoqdlK7Q',
   };
   for (let i = 0; i < n; i++) {
+    course.id = i;
     courses.push(course);
   }
   return courses;
 };
 
 const recommendedCourses = genrateDummyCourse(10);
+console.log(recommendedCourses);
 </script>

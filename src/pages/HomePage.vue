@@ -23,23 +23,12 @@
   </q-page>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-export default defineComponent({
-  name: 'HomePage',
-
-  setup() {
-    const courses = [
-      {
-        id: 1,
-        title: 'Meditation & Mindfulness | Day 01',
-        src: 'https://www.youtube.com/embed/EzntoqdlK7Q',
-      },
-    ];
-
-    return {
-      courses,
-    };
+<script lang="ts" setup>
+const courses = [
+  {
+    id: 1,
+    title: 'Meditation & Mindfulness | Day 01',
+    src: 'https://www.youtube.com/embed/EzntoqdlK7Q',
   },
-});
+];
 </script>
