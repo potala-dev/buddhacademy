@@ -1,45 +1,24 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title> Buddhacademy </q-toolbar-title>
+        <q-toolbar-title class="text-center">Buddhacademy</q-toolbar-title>
       </q-toolbar>
     </q-header>
-
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered> </q-drawer>
 
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <q-footer>
+      <q-tabs>
+        <q-route-tab label="Home" icon="home" />
+        <q-route-tab label="Courses" icon="school" />
+        <q-route-tab label="Explore" icon="apps" />
+        <q-route-tab label="Settings" icon="settings" />
+      </q-tabs>
+    </q-footer>
   </q-layout>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
-
-export default defineComponent({
-  name: 'MainLayout',
-
-  components: {},
-
-  setup() {
-    const leftDrawerOpen = ref(false);
-
-    return {
-      leftDrawerOpen,
-      toggleLeftDrawer() {
-        leftDrawerOpen.value = !leftDrawerOpen.value;
-      },
-    };
-  },
-});
-</script>
+<script lang="ts" setup></script>
