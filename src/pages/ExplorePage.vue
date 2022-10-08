@@ -20,8 +20,8 @@
               <q-separator />
 
               <q-card-actions align="around">
-                <q-btn flat icon="headphones" label="Start" />
-                <q-btn flat icon="bookmark" label="Save" />
+                <q-btn flat color="primary" icon="headphones" label="Start" />
+                <q-btn flat color="primary" icon="bookmark" label="Save" />
               </q-card-actions>
             </q-card>
           </div>
