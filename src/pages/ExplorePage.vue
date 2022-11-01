@@ -11,8 +11,8 @@
       <q-tab-panels v-model="tab" animated>
         <q-tab-panel name="recommended">
           <div class="q-gutter-md">
-            <q-card v-for="course in recommendedCourses" :key="course.id">
-              <q-video :src="course.src" />
+            <q-card v-for="course in courseStore.recommended" :key="course.id">
+              <q-video :src="course.url" :ratio="560 / 315" />
               <q-card-section>
                 <div class="text-h6">{{ course.title }}</div>
               </q-card-section>
@@ -37,24 +37,10 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
+import { useCourseStore } from 'stores/course';
 
-const tab = ref('recommended');
+const courseStore = useCourseStore();
+
 const search = ref('');
-
-const genrateDummyCourse = (n: number) => {
-  const courses = [];
-  const course = {
-    id: 0,
-    title: `Meditation & Mindfulness | Day ${n}`,
-    src: 'https://www.youtube.com/embed/EzntoqdlK7Q',
-  };
-  for (let i = 0; i < n; i++) {
-    course.id = i;
-    courses.push(course);
-  }
-  return courses;
-};
-
-const recommendedCourses = genrateDummyCourse(10);
-console.log(recommendedCourses);
+const tab = ref('recommended');
 </script>

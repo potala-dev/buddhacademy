@@ -4,10 +4,10 @@
       <div class="text-h5">Continue Watching</div>
       <div class="q-mt-md">
         <q-card>
-          <q-video :src="courses[0].src" />
+          <q-video :src="courseStore.currentCourse.url" :ratio="560 / 315" />
 
           <q-card-section>
-            <div class="text-h6">{{ courses[0].title }}</div>
+            <div class="text-h6">{{ courseStore.currentCourse.title }}</div>
           </q-card-section>
         </q-card>
       </div>
@@ -24,11 +24,7 @@
 </template>
 
 <script lang="ts" setup>
-const courses = [
-  {
-    id: 1,
-    title: 'Meditation & Mindfulness | Day 01',
-    src: 'https://www.youtube.com/embed/EzntoqdlK7Q',
-  },
-];
+import { useCourseStore } from 'stores/course';
+
+const courseStore = useCourseStore();
 </script>

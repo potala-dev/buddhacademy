@@ -11,8 +11,8 @@
       <q-tab-panels v-model="tab" animated>
         <q-tab-panel name="started">
           <div class="q-gutter-md">
-            <q-card v-for="course in startedCourses" :key="course.id">
-              <q-video :src="course.src" />
+            <q-card v-for="course in courseStore.started" :key="course.id">
+              <q-video :src="course.url" :ratio="560 / 315" />
               <q-card-section>
                 <div class="text-h6">{{ course.title }}</div>
               </q-card-section>
@@ -21,8 +21,8 @@
         </q-tab-panel>
         <q-tab-panel name="watchlist">
           <div class="q-gutter-md">
-            <q-card v-for="course in watchlistCourses" :key="course.id">
-              <q-video :src="course.src" />
+            <q-card v-for="course in courseStore.watchlist" :key="course.id">
+              <q-video :src="course.url" :ratio="560 / 315" />
               <q-card-section>
                 <div class="text-h6">{{ course.title }}</div>
               </q-card-section>
@@ -36,22 +36,9 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
+import { useCourseStore } from 'stores/course';
+
+const courseStore = useCourseStore();
+
 const tab = ref('started');
-
-const genrateDummyCourse = (n: number) => {
-  const courses = [];
-  const course = {
-    id: n,
-    title: `Meditation & Mindfulness | Day ${n}`,
-    src: 'https://www.youtube.com/embed/EzntoqdlK7Q',
-  };
-  for (let i = 0; i < n; i++) {
-    courses.push(course);
-  }
-  return courses;
-};
-
-const startedCourses = genrateDummyCourse(10);
-
-const watchlistCourses = genrateDummyCourse(20);
 </script>
