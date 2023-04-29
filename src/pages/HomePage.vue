@@ -13,11 +13,9 @@
       </div>
     </div>
     <div>
-      <div class="text-h5">Progress</div>
-      <div class="q-mt-md q-gutter-lg">
-        <q-skeleton type="rect" height="200px" width="100" />
-        <q-skeleton type="rect" height="200px" width="100" />
-        <q-skeleton type="rect" height="200px" width="100" />
+      <div class="text-h5 text-weight-light">Texts</div>
+      <div class="q-mt-md">
+        <TextList />
       </div>
     </div>
   </q-page>
@@ -25,6 +23,7 @@
 
 <script lang="ts" setup>
 import { useCourseStore } from 'stores/course';
+import TextList from 'components/TextList.vue';
 
 const courseStore = useCourseStore();
 </script>
