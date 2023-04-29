@@ -1,8 +1,12 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header>
+    <q-header class="q-mx-auto">
       <q-toolbar>
-        <q-toolbar-title class="text-center">Buddhacademy</q-toolbar-title>
+        <q-btn flat no-caps no-wrap class="full-width" to="/">
+          <q-toolbar-title shrink class="text-weight-bold"
+            >Buddhacademy</q-toolbar-title
+          >
+        </q-btn>
       </q-toolbar>
     </q-header>
 
