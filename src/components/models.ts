@@ -1,8 +1,9 @@
-export interface Todo {
-  id: number;
-  content: string;
+interface Text {
+  title: string;
+  url: string;
 }
 
-export interface Meta {
-  totalCount: number;
+interface TextContentResponse {
+  title: string;
+  content: string;
 }

@@ -1,13 +1,9 @@
 <template>
   <q-page padding>
-    <!-- content -->
-    Here is some text.
+    <TextContent />
   </q-page>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-export default defineComponent({
-  // name: 'PageName'
-});
+<script lang="ts" setup>
+import TextContent from 'components/TextContent.vue';
 </script>
